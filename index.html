@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+<title>Audio Samples</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<style>
+  .logo{
+    margin-left: 5px;
+    float: left;
+  }
+  
+  .banner{
+    color: #3265C2;
+    margin-left: 2%;
+    /*margin-bottom: 0;*/
+    float: left;
+  }
+
+  .closer { 
+    line-height: 10px;
+  }
+
+  .row:after {
+    content: "";
+    display: flex;
+    clear: both;
+  }
+
+  .case{
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  body {
+    margin: 20;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #topBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  #topBtn:hover {
+    background-color: #3265C2;
+  }
+  
+  table {
+    border-collapse: collapse;
+  }
+  
+  th {
+    text-align: center;
+    background-color: #3265C2;
+    color: white;
+    height: 30px;
+  }
+
+  td {
+    text-align: center;
+  }
+  
+  tr {
+    border-bottom: 2px solid black;
+  }
+  
+  .original {
+    transform: scale(1);
+    position: inherit;
+    z-index: 0;
+  }
+  
+  .enlarged {
+    transform: scale(2);
+    position: relative;
+    z-index: 100;
+  }
+
+  .reference{
+    font-family: 'Times New Roman';
+    font-size: 12;
+  }
+
+
+</style>
+</head>
+
+<body>
+
+<div>
+   <div class="row">
+    <div class="logo"><img src=".\img\logo_ugent_nl.svg"></div>
+    <div class="banner">
+      <h1 class="closer">ASPIRE</h1>
+      <p class="closer" style="font-size: 80%;">Audio and Signal Processing, Interpretation, and Enhancement@IDLAB</p>
+    </div>
+  </div>
+
+</div>
+
+<div>
+
+<h3>Audio samples </h3>
+
+
+<div>
+
+  This page presents audio samples for our submission <em>Spatially Selective Speaker Separation Using a DNN With a Location Dependent Feature Extraction</em>.
+  <br/>
+  <br/>
+
+  They demonstrate the difference between using a real-valued masking to enhance only the <em>magnitude</em> vs. <em>additionally performing a phase enhancement</em>.
+  <br/>
+  All results are obtained from the same trained model (high-complexity setup of CRUSE with location dependent feature extraction)
+  <br/>
+  <br/>
+
+  
+Major experiment parameters:
+<ul>
+  <li>Uniform rectangular array with 9 microphones (4.2cm distance between neighboring microphones)</li>
+  <li>Background noise was added at SNR=0dB</li>
+  <li>Time-invariant source and target DOAs</li>
+</ul>
+Otherwise as described in our submission.
+</div>
+
+<br/>
+<br/>
+
+<table class="tb" border="1"id="ref" style="width:90%">
+<thead>
+<tr>
+  <th align="center">noisy microphone signal</th>
+  <th align="center">clean speech signals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="center">
+     <audio controls=true  style="width: 90%" src="./audio/mic.wav"></audio>
+  </td>
+  <td align="center">
+    <audio controls=true  style="width: 40%" src="./audio/clean_speaker1.wav"></audio>
+    <audio controls=true  style="width: 40%" src="./audio/clean_speaker2.wav"></audio>
+  </td>
+</tr>
+</tbody>
+</table>
+<br/>
+
+<table class="tb" border="1"id="speaker1" style="width:90%">
+<thead>
+<tr>
+  <th align="center" style="width: 30%"></th>
+  <th align="center" style="width: 35%">Speaker 1</th>
+  <th align="center" style="width: 35%">Speaker 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="center">Real valued mask</td>
+  <td align="center"><audio controls=true style="width: 90%" src="./audio/pure_masking_speaker1.wav"></audio></td>
+  <td align="center"><audio controls=true style="width: 90%"  src="./audio/pure_masking_speaker2.wav"></audio></td>
+</tr>
+<tr>
+  <td align="center">Masking + Phase enhancement</td>
+  <td align="center"><audio controls=true style="width: 90%"  src="./audio/enhanced_phase_speaker1.wav"></audio></td>
+  <td align="center"><audio controls=true style="width: 90%"  src="./audio/enhanced_phase_speaker2.wav"></audio></td>
+</tr>
+</tbody>
+</table>
+<br/>
+
+</body>
+
+</html>
